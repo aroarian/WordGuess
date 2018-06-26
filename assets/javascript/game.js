@@ -38,8 +38,8 @@ window.onload = function(event) {
             userLetters.push(userGuess);
             console.log(userLetters);
     }
-    else wrongGuess.push(userGuess);
+    else if (wrongGuess.push(userGuess)){
         console.log(wrongGuess);
-
+    };
   }
 };
