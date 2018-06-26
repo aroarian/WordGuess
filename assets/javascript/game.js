@@ -33,12 +33,13 @@ window.onload = function(event) {
   document.onkeypress = function(event) {
     var userGuess = event.key;
     document.getElementById("guess").innerHTML = userGuess;
-    if (currentWord.indexOf(userGuess) > -1){
-        console.log(false);
-            // userLetters.push(userGuess);
-            // console.log(userLetters);
+    if (wordPick.indexOf(userGuess) > -1){
+        // console.log(true);
+            userLetters.push(userGuess);
+            console.log(userLetters);
     }
     else wrongGuess.push(userGuess);
+        console.log(wrongGuess);
 
   }
 };
