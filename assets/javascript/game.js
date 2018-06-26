@@ -10,16 +10,35 @@ var words = [
   "transcript",
   "kilobyte"
 ];
-var currentWord = [];
+// var currentWord = [];
+var userLetters = [];
+var wrongGuess = [];
+
+
+var win = 0;
+var lost = 0;
 
 window.onload = function(event) {
   var wordPick = words[Math.floor(Math.random() * words.length)];
-  currentWord.push(wordPick);
-  var wordString = currentWord.toString();
-  var wordLength = wordString.length;
+  var currentWord = [wordPick];
+//   var wordString = currentWord.toString();
+  document.getElementById("word").innerHTML = wordPick;
+  var wordLength = wordPick.length;
   var underScore = "‾ ".repeat(wordLength);
-  document.getElementById("underscore").innerHTML= underScore;
+  document.getElementById("underscore").innerHTML = underScore;
   console.log(wordLength);
   console.log(currentWord);
-  console.log(wordString);
+  
+
+  document.onkeypress = function(event) {
+    var userGuess = event.key;
+    document.getElementById("guess").innerHTML = userGuess;
+    if (currentWord.indexOf(userGuess) > -1){
+        console.log(false);
+            // userLetters.push(userGuess);
+            // console.log(userLetters);
+    }
+    else wrongGuess.push(userGuess);
+
+  }
 };
