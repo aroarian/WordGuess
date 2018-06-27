@@ -49,7 +49,7 @@ window.onload = function(event) {
     }
     console.log(wrongGuess);
 
-    if (userLetters == currentWord && loss > 0) {
+    if (userLetters == currentWord && guessLeft > 0) {
       alert("Congrats you win!");
     }
   };
