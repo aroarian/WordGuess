@@ -13,33 +13,40 @@ var words = [
 // var currentWord = [];
 var userLetters = [];
 var wrongGuess = [];
-
+var underScores = [];
 
 var win = 0;
-var lost = 0;
+var guessLeft = 10;
 
 window.onload = function(event) {
+  document.getElementById("loss").innerHTML = guessLeft;
+  document.getElementById("wins").innerHTML = win;
   var wordPick = words[Math.floor(Math.random() * words.length)];
-  var currentWord = [wordPick];
-//   var wordString = currentWord.toString();
-  document.getElementById("word").innerHTML = wordPick;
-  var wordLength = wordPick.length;
-  var underScore = "‾ ".repeat(wordLength);
-  document.getElementById("underscore").innerHTML = underScore;
-  console.log(wordLength);
+  var currentWord = wordPick;
+  //   var wordLength = wordPick.length;
+
+  for (var i = 0; i < wordPick.length; i++) {
+    underScores.push("_ ");
+  }
   console.log(currentWord);
-  
+  document.getElementById("underscore").innerHTML = underScores.join(" ");
 
   document.onkeypress = function(event) {
     var userGuess = event.key;
-    document.getElementById("guess").innerHTML = userGuess;
-    if (wordPick.indexOf(userGuess) > -1){
-        // console.log(true);
-            userLetters.push(userGuess);
-            console.log(userLetters);
-    }
-    else wrongGuess.push(userGuess)
-        console.log(wrongGuess);
+
+    if (wordPick.indexOf(userGuess) > -1) {
+      console.log(true);
+    } 
     
-  }
+    else {
+      wrongGuess.push(userGuess);
+      guessLeft--;
+      document.getElementById("loss").innerHTML = guessLeft;
+    }
+    console.log(wrongGuess);
+
+    if (userLetters == currentWord && loss > 0) {
+      alert("Congrats you win!");
+    }
+  };
 };
