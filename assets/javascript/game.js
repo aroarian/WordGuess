@@ -22,7 +22,9 @@ window.onload = function(event) {
   document.getElementById("loss").innerHTML = guessLeft;
   document.getElementById("wins").innerHTML = win;
   var wordPick = words[Math.floor(Math.random() * words.length)];
-  var currentWord = [wordPick];
+  var currentWord = wordPick;
+  var split = currentWord.split("");
+  console.log("array " + split);
   //   var wordLength = wordPick.length;
 
   for (var i = 0; i < wordPick.length; i++) {
@@ -35,14 +37,15 @@ window.onload = function(event) {
     var userGuess = event.key;
 
     if (wordPick.indexOf(userGuess) > -1) {
-        userLetters.push(userGuess);
-        
-        
-      console.log(userLetters);
-     
-    } 
-    
-    else {
+      userLetters.push(userGuess);
+
+      for (var i = 0; i < split.length; i++) {
+        if (userGuess == split[i]) {
+          underScores[i] = userGuess;
+        }
+      }
+      console.log(underScores);
+    } else {
       wrongGuess.push(userGuess);
       guessLeft--;
       document.getElementById("loss").innerHTML = guessLeft;
