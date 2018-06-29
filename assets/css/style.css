@@ -21,6 +21,7 @@ body {
   color: white;
   font-size: 40px;
   font-family: 'Schoolbell', cursive;
+  background-image: "assets/images/header.jpg"
 }
 
 .header p {
