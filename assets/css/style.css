@@ -19,8 +19,8 @@ body {
   text-align: center;
   color: white;
   font-size: 40px;
-  font-family: 'Schoolbell', cursive;
-} 
+  font-family: "Schoolbell", cursive;
+}
 
 .header p {
   font-size: 10px;
@@ -84,10 +84,11 @@ body {
 .rightcontrol {
   float: right;
   width: 30%;
+  max-width: 121px;
   min-height: 30px;
 }
 
-.rightcontrol input{
+.rightcontrol input {
   outline: none;
 }
 
@@ -131,4 +132,21 @@ body {
 }
 #loss {
   font-family: "Schoolbell", cursive;
+}
+
+@media screen and (max-width: 815px) {
+  #images img {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .rightcontrol input {
+    height: 85%;
+    width: 85%;
+  }
+
+  .header img {
+    width: 85%;
+  }
 }
