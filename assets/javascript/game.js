@@ -65,6 +65,7 @@ function gamestart() {
   }
 
   document.getElementById("underscore").innerHTML = underScores.join(" ");
+  
 //Game Start Function: User clicks a key =================================================
   document.onkeypress = function(event) {
     var userGuess = event.key;
