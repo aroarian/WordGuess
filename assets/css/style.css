@@ -11,16 +11,17 @@ body {
   width: 85%;
   max-width: 968px;
   background-color: black;
-  
 }
 
 .header {
   width: 100%;
   border-bottom: 1px solid white;
-  padding-top: 23px;
+  
   padding-bottom: 23px;
   text-align: center;
   color: white;
+  font-size: 40px;
+  font-family: 'Schoolbell', cursive;
 }
 
 .header p {
@@ -44,19 +45,16 @@ body {
 
 #images {
   width: auto;
-  padding-left:20px;
+  padding-left: 20px;
   min-height: 460px;
   height: 77.7%;
-  
   text-align: center;
-  color:white;
+  color: white;
   margin-left: auto;
-  margin-right:auto;
+  margin-right: auto;
   letter-spacing: 26px;
   font-size: 45px;
   font-weight: bold;
-  
-  
 }
 
 #underscore {
@@ -65,13 +63,12 @@ body {
   height: 20%;
   min-height: 10px;
   max-height: 30px;
-  
-  font-size: 45px;
+  font-family: "Schoolbell", cursive;
+  font-size: 35px;
   font-weight: bold;
   text-align: center;
   letter-spacing: 3px;
-  color:white;
-
+  color: white;
 }
 
 .right {
@@ -81,7 +78,7 @@ body {
   height: 100%;
 }
 
-.leftcontrol{
+.leftcontrol {
   float: left;
   width: 50%;
   min-height: 97px;
@@ -92,33 +89,44 @@ body {
   min-height: 30px;
 }
 
-
 #guess {
   width: 100%;
   height: 75%;
   min-height: 489px;
   border-bottom: 1px solid white;
-  color:white;
+  font-family: "Schoolbell", cursive;
+  color: white;
   font-size: 35px;
   overflow: auto;
   padding-top: 10px;
   padding-left: 10px;
-  
 }
 
 #userguess {
   padding: 10px;
-  
 }
 #userguess p {
-  float:left;
-  padding:7px;
+  float: left;
+  padding: 7px;
 }
 .controls {
   width: 100%;
   height: 25%;
   min-height: 87px;
-  color:white;
-  padding-top:10px;
+  color: white;
+  padding-top: 10px;
   padding-left: 15px;
+}
+
+#win {
+  font-family: "Schoolbell", cursive;
+}
+#wins {
+  font-family: "Schoolbell", cursive;
+}
+#guesses {
+  font-family: "Schoolbell", cursive;
+}
+#loss {
+  font-family: "Schoolbell", cursive;
 }

@@ -8,7 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Schoolbell" rel="stylesheet">
     <script type="text/javascript" src="./assets/javascript/game.js"></script>
+
 
     <title>Word Guess</title>
 </head>
@@ -16,14 +18,12 @@
 <body onload="gamestart()">
     <div class="container">
         <div class="header">
-            WORD GUESS GAME
+            CLASSROOM WORD GUESS GAME
             <p>(totally not hangman)</p>
         </div>
         <div class="left">
             <div class="hang">
-
                 <div id="images">
-
                 </div>
                 <div id="underscore"></div>
             </div>
@@ -32,7 +32,6 @@
             <div id="guess">
                 Your Guesses:
                 <div id="userguess"></div>
-
             </div>
             <div class="controls">
                 <div class="leftcontrol">
@@ -42,12 +41,10 @@
                     <div id="loss">10</div>
                 </div>
                 <div class="rightcontrol">
-                    <button onclick="gamestart()">New Word</button>
+                    <button onclick="gamestart()"><img src="icons/close.png" />New Word</button>
                 </div>
             </div>
         </div>
-
-
     </div>
 
 </body>
