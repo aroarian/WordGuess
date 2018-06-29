@@ -88,6 +88,10 @@ body {
   min-height: 30px;
 }
 
+.rightcontrol input{
+  outline: none;
+}
+
 #guess {
   width: 100%;
   height: 75%;
