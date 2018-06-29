@@ -13,28 +13,37 @@
     <title>Word Guess</title>
 </head>
 
-<body>
+<body onload="gamestart()">
     <div class="container">
         <div class="header">
-            WORD GUESS GAME <p>(totally not hangman)</p>
+            WORD GUESS GAME
+            <p>(totally not hangman)</p>
         </div>
         <div class="left">
             <div class="hang">
 
                 <div id="word">
-                    
-                </div> 
-                <div id="underscore"></div> 
+
+                </div>
+                <div id="underscore"></div>
             </div>
         </div>
         <div class="right">
             <div id="guess">
-                <div id = "win">Win:</div><div id = "wins"></div>
-                <div id = "guesses">Guesses Left:</div><div id = "loss"></div>
+                Your Guesses:
+                <div id="userguess"></div>
 
             </div>
             <div class="controls">
-
+                <div class="leftcontrol">
+                    <div id="win">Win:</div>
+                    <div id="wins"></div>
+                    <div id="guesses">Guesses Left:</div>
+                    <div id="loss">10</div>
+                </div>
+                <div class="rightcontrol">
+                    <button onclick="gamestart()">New Word</button>
+                </div>
             </div>
         </div>
 

@@ -44,10 +44,10 @@ body {
 
 #word {
   width: auto;
-  margin-top: 77.7%;
   padding-left:20px;
-  height: 20%;
-  min-height: 50px;
+  min-height: 460px;
+  height: 77.7%;
+  
   text-align: center;
   color:white;
   margin-left: auto;
@@ -80,15 +80,45 @@ body {
   min-height: 577px;
   height: 100%;
 }
+
+.leftcontrol{
+  float: left;
+  width: 50%;
+  min-height: 97px;
+}
+.rightcontrol {
+  float: right;
+  width: 30%;
+  min-height: 30px;
+}
+
+
 #guess {
   width: 100%;
   height: 75%;
   min-height: 489px;
   border-bottom: 1px solid white;
   color:white;
+  font-size: 35px;
+  overflow: auto;
+  padding-top: 10px;
+  padding-left: 10px;
+  
+}
+
+#userguess {
+  padding: 10px;
+  
+}
+#userguess p {
+  float:left;
+  padding:7px;
 }
 .controls {
   width: 100%;
   height: 25%;
   min-height: 87px;
+  color:white;
+  padding-top:10px;
+  padding-left: 15px;
 }
