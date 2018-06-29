@@ -15,7 +15,7 @@ body {
 
 .header {
   width: 100%;
-  border-bottom: 1px solid white;
+  border-bottom: 5px solid white;
   text-align: center;
   color: white;
   font-size: 40px;
@@ -38,7 +38,7 @@ body {
   width: 100%;
   height: 100%;
   min-height: 577px;
-  border-right: 1px solid white;
+  border-right: 5px solid white;
 }
 
 #images {
@@ -92,11 +92,19 @@ body {
   outline: none;
 }
 
+.button {
+  background-image: url("../images/button.jpg");
+}
+
+.smallbutton{
+  display: none;
+}
+
 #guess {
   width: 100%;
   height: 75%;
   min-height: 489px;
-  border-bottom: 1px solid white;
+  border-bottom: 5px solid white;
   font-family: "Schoolbell", cursive;
   color: white;
   font-size: 35px;
@@ -141,12 +149,24 @@ body {
 }
 
 @media screen and (max-width: 785px) {
-  .rightcontrol input {
+  .button {
     height: 85%;
     width: 85%;
+    display:none;
+  }
+
+  .smallbutton{
+    display:block;
+    width: 95%;
+    height: 95%;
   }
 
   .header img {
     width: 85%;
+  }
+}
+@media screen and (max-width: 373px) {
+  #guess{
+    font-size: 25px;
   }
 }
