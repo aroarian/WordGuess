@@ -1,3 +1,8 @@
+//  @author Ian Cogswell
+//  Written: June 2018
+//  UNH Coding Bootcamp Homework Week 3
+
+// Array containing possible word selections. Add to this Array for more words
 var words = [
   "pickle",
   "motherboard",
@@ -11,6 +16,8 @@ var words = [
   "kilobyte"
 ];
 
+//Global Variables =================================================================
+// Blank Arrays to push data to throughout game
 var userLetters = [];
 var wrongGuess = [];
 var underScores = [];
@@ -18,7 +25,7 @@ var underScores = [];
 var win = 0;
 var guessLeft = 10;
 
-
+//Game Reset Function ================================================================
 function gamereset() {
   var win = 0;
   var guessLeft = 10;
@@ -26,13 +33,13 @@ function gamereset() {
   document.getElementById("underscore").innerHTML = "";
   document.getElementById("userguess").innerHTML = "";
   gamestart();
-  
 
   for (var i = 0; i < wordPick.length; i++) {
     underScores.push("_ ");
   }
-  // document.getElementById("underscore").innerHTML = underScores.join(" ");
 }
+
+//Game Start Function ================================================================
 function gamestart() {
   underScores = [];
   guessLeft = 10;
@@ -55,7 +62,7 @@ function gamestart() {
   }
 
   document.getElementById("underscore").innerHTML = underScores.join(" ");
-
+//Game Start Function: User clicks a key =================================================
   document.onkeypress = function(event) {
     var userGuess = event.key;
     userGuess = userGuess.toLowerCase();
@@ -64,7 +71,9 @@ function gamestart() {
       for (var i = 0; i < split.length; i++) {
         if (userGuess == split[i]) {
           underScores[i] = userGuess;
-          document.getElementById("underscore").innerHTML = underScores.join(" ");
+          document.getElementById("underscore").innerHTML = underScores.join(
+            " "
+          );
           var div = document.createElement("p");
           var Guess = document.createTextNode(userGuess);
           div.appendChild(Guess);
@@ -73,6 +82,7 @@ function gamestart() {
       }
     } 
     
+    //Game Start Function: Subtract from Guesses Left=====================================
     else {
       wrongGuess.push(userGuess);
       guessLeft--;
@@ -84,13 +94,15 @@ function gamestart() {
       console.log(wrongGuess);
     }
 
+    //Game Start Function: Game win logic =================================================
     if (underScores.indexOf("_ ") == -1) {
       alert("Congrats you win! The word was: " + wordPick);
       win++;
       document.getElementById("wins").innerHTML = win;
       gamestart();
-    } 
-
+    }
+    
+    //Game Start Function: Game Lose logic ================================================
     else if (guessLeft == 0) {
       alert("You Lose. The word was: " + wordPick);
       win = 0;
@@ -99,35 +111,35 @@ function gamestart() {
       gamereset();
     }
 
-    if (guessLeft == 9){
+    //Game Start Function: Display "WordGuess" progression images =========================
+    if (guessLeft == 9) {
       img.setAttribute("src", "assets/images/9.jpg");
     }
-    if (guessLeft == 8){
+    if (guessLeft == 8) {
       img.setAttribute("src", "assets/images/8.jpg");
     }
-    if (guessLeft == 7){
+    if (guessLeft == 7) {
       img.setAttribute("src", "assets/images/7.jpg");
     }
-    if (guessLeft == 6){
+    if (guessLeft == 6) {
       img.setAttribute("src", "assets/images/6.jpg");
     }
-    if (guessLeft == 5){
+    if (guessLeft == 5) {
       img.setAttribute("src", "assets/images/5.jpg");
     }
-    if (guessLeft == 4){
+    if (guessLeft == 4) {
       img.setAttribute("src", "assets/images/4.jpg");
     }
-    if (guessLeft == 3){
+    if (guessLeft == 3) {
       img.setAttribute("src", "assets/images/3.jpg");
     }
-    if (guessLeft == 2){
+    if (guessLeft == 2) {
       img.setAttribute("src", "assets/images/2.jpg");
     }
-    if (guessLeft == 1){
+    if (guessLeft == 1) {
       img.setAttribute("src", "assets/images/1.jpg");
     }
-  }
-};
-// };
+  };
+}
 
 gamestart();

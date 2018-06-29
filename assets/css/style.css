@@ -96,10 +96,19 @@ body {
   background-image: url("../images/button.jpg");
 }
 
-.smallbutton{
+.smallbutton {
   display: none;
 }
 
+.press {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.rules {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
 #guess {
   width: 100%;
   height: 75%;
@@ -119,6 +128,8 @@ body {
 #userguess p {
   float: left;
   padding: 7px;
+  padding-left: 15px;
+  text-transform: uppercase;
 }
 .controls {
   width: 100%;
@@ -152,11 +163,11 @@ body {
   .button {
     height: 85%;
     width: 85%;
-    display:none;
+    display: none;
   }
 
-  .smallbutton{
-    display:block;
+  .smallbutton {
+    display: block;
     width: 95%;
     height: 95%;
   }
@@ -166,7 +177,7 @@ body {
   }
 }
 @media screen and (max-width: 373px) {
-  #guess{
+  #guess {
     font-size: 25px;
   }
 }

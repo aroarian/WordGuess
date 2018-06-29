@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Schoolbell" rel="stylesheet">
@@ -29,6 +28,8 @@
         </div>
         <div class="right">
             <div id="guess">
+                <p class="press">Press any Key to get Started</p>
+                <p class="rules">Click "New Word" button to reset the game</p>
                 Your Guesses:
                 <div id="userguess"></div>
             </div>
@@ -40,10 +41,9 @@
                     <div id="loss">10</div>
                 </div>
                 <div class="rightcontrol">
-                    <!-- <button onclick="gamestart()">New Word</button> -->
                     <input class="button" type="image" onclick="gamestart()" src="./assets/images/button.jpg" />
                     <input class="smallbutton" type="image" onclick="gamestart()" src="./assets/images/smallbutton.jpg" />
-                    
+
                 </div>
             </div>
         </div>
