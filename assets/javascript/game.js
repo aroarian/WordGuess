@@ -41,6 +41,8 @@ function gamereset() {
 function gamestart() {
   underScores = [];
   guessLeft = 10;
+  // var imgstart = document.createElement("img");
+  // imgstart.setAttribute("src", "images/hydrangeas.jpg");
   document.getElementById("userguess").innerHTML = "";
   document.getElementById("loss").innerHTML = guessLeft;
   document.getElementById("wins").innerHTML = win;
