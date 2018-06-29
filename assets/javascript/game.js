@@ -65,7 +65,7 @@ function gamestart() {
   }
 
   document.getElementById("underscore").innerHTML = underScores.join(" ");
-  
+
 //Game Start Function: User clicks a key =================================================
   document.onkeypress = function(event) {
     var userGuess = event.key;
@@ -75,9 +75,7 @@ function gamestart() {
       for (var i = 0; i < split.length; i++) {
         if (userGuess == split[i]) {
           underScores[i] = userGuess;
-          document.getElementById("underscore").innerHTML = underScores.join(
-            " "
-          );
+          document.getElementById("underscore").innerHTML = underScores.join(" ");
           var div = document.createElement("p");
           var Guess = document.createTextNode(userGuess);
           div.appendChild(Guess);
