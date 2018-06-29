@@ -25,6 +25,7 @@ var underScores = [];
 var win = 0;
 var guessLeft = 10;
 
+//End Global Variables ===============================================================
 //Game Reset Function ================================================================
 function gamereset() {
   var win = 0;
