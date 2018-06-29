@@ -36,6 +36,7 @@ function gamereset() {
 function gamestart() {
   underScores = [];
   guessLeft = 10;
+  document.getElementById("images").innerHTML = "";
   var img = document.createElement("img");
   img.setAttribute("src", "assets/images/start.jpg");
   img.setAttribute("height", "434");
