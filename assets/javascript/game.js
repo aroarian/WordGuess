@@ -27,13 +27,14 @@ var guessLeft = 10;
 
 //End Global Variables ===============================================================
 
-
 //Game Reset Function ================================================================
 function gamereset() {
-  var win = 0;
-  var guessLeft = 10;
-  
+  win = 0;
+  guessLeft = 10;
+
   underScores = [];
+  userLetters = [];
+  wrongGuess = [];
   document.getElementById("underscore").innerHTML = "";
   document.getElementById("userguess").innerHTML = "";
   gamestart();
@@ -46,6 +47,8 @@ function gamereset() {
 //Game Start Function ================================================================
 function gamestart() {
   underScores = [];
+  userLetters = [];
+  wrongGuess = [];
   guessLeft = 10;
   document.getElementById("images").innerHTML = "";
   var img = document.createElement("img");
@@ -59,7 +62,6 @@ function gamestart() {
   var wordPick = words[Math.floor(Math.random() * words.length)];
   var currentWord = wordPick;
   var split = currentWord.split("");
-  console.log(split);
 
   for (var i = 0; i < wordPick.length; i++) {
     underScores.push("_ ");
@@ -67,13 +69,20 @@ function gamestart() {
 
   document.getElementById("underscore").innerHTML = underScores.join(" ");
 
-//Game Start Function: User clicks a key =================================================
+  //Game Start Function: User clicks a key =================================================
   document.onkeypress = function(event) {
     var userGuess = event.key.toLowerCase();
-    if (wrongGuess.includes(userGuess) || userLetters.includes(userGuess)){
+
+    //Eliminates duplicates wrong and correct guesses
+    if (wrongGuess.includes(userGuess) || userLetters.includes(userGuess)) {
       return false;
     }
-    console.log(event.keyCode);
+
+    //Ignores all event.keys that aren't between a-z
+    if (event.keyCode < 97 || event.keyCode > 122) {
+      return false;
+    }
+
     if (wordPick.indexOf(userGuess) > -1) {
       for (var i = 0; i < split.length; i++) {
         if (userGuess == split[i]) {
@@ -86,9 +95,8 @@ function gamestart() {
           userLetters.push(userGuess);
         }
       }
-    } 
+    }
    
-    
     //Game Start Function: Subtract from Guesses Left=====================================
     else {
       wrongGuess.push(userGuess);
@@ -98,8 +106,7 @@ function gamestart() {
       var Guess = document.createTextNode(userGuess);
       div.appendChild(Guess);
       document.getElementById("userguess").appendChild(div);
-     
-     }
+    }
 
     //Game Start Function: Game win logic =================================================
     if (underScores.indexOf("_ ") == -1) {
@@ -108,7 +115,7 @@ function gamestart() {
       document.getElementById("wins").innerHTML = win;
       gamestart();
     }
-    
+
     //Game Start Function: Game Lose logic ================================================
     else if (guessLeft == 0) {
       alert("You Lose. The word was: " + wordPick);
