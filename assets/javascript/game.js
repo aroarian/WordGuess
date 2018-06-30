@@ -18,6 +18,7 @@ var words = [
 
 //Global Variables =================================================================
 // Blank Arrays to push data to throughout game
+var userLetters = [];
 var wrongGuess = [];
 var underScores = [];
 
@@ -31,6 +32,7 @@ var guessLeft = 10;
 function gamereset() {
   var win = 0;
   var guessLeft = 10;
+  
   underScores = [];
   document.getElementById("underscore").innerHTML = "";
   document.getElementById("userguess").innerHTML = "";
@@ -67,9 +69,11 @@ function gamestart() {
 
 //Game Start Function: User clicks a key =================================================
   document.onkeypress = function(event) {
-    var userGuess = event.key;
-    userGuess = userGuess.toLowerCase();
-
+    var userGuess = event.key.toLowerCase();
+    if (wrongGuess.includes(userGuess) || userLetters.includes(userGuess)){
+      return false;
+    }
+    console.log(event.keyCode);
     if (wordPick.indexOf(userGuess) > -1) {
       for (var i = 0; i < split.length; i++) {
         if (userGuess == split[i]) {
@@ -79,9 +83,11 @@ function gamestart() {
           var Guess = document.createTextNode(userGuess);
           div.appendChild(Guess);
           document.getElementById("userguess").appendChild(div);
+          userLetters.push(userGuess);
         }
       }
     } 
+   
     
     //Game Start Function: Subtract from Guesses Left=====================================
     else {
@@ -92,7 +98,8 @@ function gamestart() {
       var Guess = document.createTextNode(userGuess);
       div.appendChild(Guess);
       document.getElementById("userguess").appendChild(div);
-      }
+     
+     }
 
     //Game Start Function: Game win logic =================================================
     if (underScores.indexOf("_ ") == -1) {
