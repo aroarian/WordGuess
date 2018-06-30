@@ -83,11 +83,6 @@ function gamestart() {
       }
     } 
     
-    //Stops user from losing guesses on duplicate guesses
-    if (wrongGuess.includes(userGuess)){
-      return false;
-    }
-
     //Game Start Function: Subtract from Guesses Left=====================================
     else {
       wrongGuess.push(userGuess);
@@ -97,7 +92,7 @@ function gamestart() {
       var Guess = document.createTextNode(userGuess);
       div.appendChild(Guess);
       document.getElementById("userguess").appendChild(div);
-    }
+      }
 
     //Game Start Function: Game win logic =================================================
     if (underScores.indexOf("_ ") == -1) {
