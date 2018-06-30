@@ -93,7 +93,6 @@ function gamestart() {
       var Guess = document.createTextNode(userGuess);
       div.appendChild(Guess);
       document.getElementById("userguess").appendChild(div);
-      console.log(wrongGuess);
     }
 
     //Game Start Function: Game win logic =================================================
