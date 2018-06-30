@@ -13,7 +13,17 @@ var words = [
   "unworthy",
   "witchcraft",
   "transcript",
-  "kilobyte"
+  "kilobyte",
+  "bagpipes",
+  "dwarves",
+  "haphazard",
+  "ivory",
+  "numbskull",
+  "ostracize",
+  "rhythmic",
+  "quip",
+  "fjord",
+  "our"
 ];
 
 //Global Variables =================================================================
@@ -152,6 +162,6 @@ function gamestart() {
       img.setAttribute("src", "assets/images/1.jpg");
     }
   };
-}
+};
 
 gamestart();
