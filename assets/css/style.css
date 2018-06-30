@@ -33,6 +33,7 @@ body {
   max-width: 594px;
   min-height: 577px;
 }
+
 .hang {
   float: left;
   width: 100%;
@@ -81,6 +82,7 @@ body {
   width: 50%;
   min-height: 97px;
 }
+
 .rightcontrol {
   float: right;
   width: 30%;
@@ -109,6 +111,7 @@ body {
   font-size: 20px;
   margin-bottom: 30px;
 }
+
 #guess {
   width: 100%;
   height: 75%;
@@ -124,12 +127,14 @@ body {
 #userguess {
   padding: 10px;
 }
+
 #userguess p {
   float: left;
   padding: 7px;
   padding-left: 15px;
   text-transform: uppercase;
 }
+
 .controls {
   width: 100%;
   height: 25%;
@@ -144,15 +149,18 @@ body {
   font-size: 28px;
   margin-bottom: 20px;
 }
+
 #wins {
   font-family: "Schoolbell", cursive;
   font-size: 24px;
   display: inline;
 }
+
 #guesses {
   font-family: "Schoolbell", cursive;
   font-size: 28px;
 }
+
 #loss {
   font-family: "Schoolbell", cursive;
   font-size: 24px;

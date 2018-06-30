@@ -2,7 +2,7 @@
 //  Written: June 2018
 //  UNH Coding Bootcamp Homework Week 3
 
-// Array containing possible word selections. Add to this Array for more words
+// Array containing possible word selections. Add to this Array for more words =====
 var words = [
   "pickle",
   "motherboard",
@@ -31,7 +31,6 @@ var guessLeft = 10;
 function gamereset() {
   win = 0;
   guessLeft = 10;
-
   underScores = [];
   userLetters = [];
   wrongGuess = [];
@@ -69,20 +68,20 @@ function gamestart() {
 
   document.getElementById("underscore").innerHTML = underScores.join(" ");
 
-  //Game Start Function: User clicks a key =================================================
+//Game Start Function: User clicks a key =================================================
   document.onkeypress = function(event) {
     var userGuess = event.key.toLowerCase();
 
-    //Eliminates duplicates wrong and correct guesses
+//Eliminates duplicates wrong and correct guesses ========================================
     if (wrongGuess.includes(userGuess) || userLetters.includes(userGuess)) {
       return false;
     }
 
-    //Ignores all event.keys that aren't between a-z
+//Ignores all event.keys that aren't between a-z =========================================
     if (event.keyCode < 97 || event.keyCode > 122) {
       return false;
     }
-
+//Game Start Function: Key clicks replaces underscores and displays userGuess==============
     if (wordPick.indexOf(userGuess) > -1) {
       for (var i = 0; i < split.length; i++) {
         if (userGuess == split[i]) {
@@ -97,7 +96,7 @@ function gamestart() {
       }
     }
    
-    //Game Start Function: Subtract from Guesses Left=====================================
+//Game Start Function: Subtract from Guesses Left==========================================
     else {
       wrongGuess.push(userGuess);
       guessLeft--;
@@ -108,7 +107,7 @@ function gamestart() {
       document.getElementById("userguess").appendChild(div);
     }
 
-    //Game Start Function: Game win logic =================================================
+//Game Start Function: Game win logic ====================================================
     if (underScores.indexOf("_ ") == -1) {
       alert("Congrats you win! The word was: " + wordPick);
       win++;
@@ -116,7 +115,7 @@ function gamestart() {
       gamestart();
     }
 
-    //Game Start Function: Game Lose logic ================================================
+//Game Start Function: Game Lose logic ===================================================
     else if (guessLeft == 0) {
       alert("You Lose. The word was: " + wordPick);
       win = 0;
@@ -125,7 +124,7 @@ function gamestart() {
       gamereset();
     }
 
-    //Game Start Function: Display "WordGuess" progression images =========================
+//Game Start Function: Display "WordGuess" progression images ============================
     if (guessLeft == 9) {
       img.setAttribute("src", "assets/images/9.jpg");
     }
