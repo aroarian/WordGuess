@@ -18,7 +18,6 @@ var words = [
 
 //Global Variables =================================================================
 // Blank Arrays to push data to throughout game
-var userLetters = [];
 var wrongGuess = [];
 var underScores = [];
 
