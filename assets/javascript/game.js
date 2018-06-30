@@ -84,6 +84,11 @@ function gamestart() {
       }
     } 
     
+    //Stops user from losing guesses on duplicate guesses
+    if (wrongGuess.includes(userGuess)){
+      return false;
+    }
+
     //Game Start Function: Subtract from Guesses Left=====================================
     else {
       wrongGuess.push(userGuess);
