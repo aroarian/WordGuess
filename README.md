@@ -1,5 +1,7 @@
 # Classroom Word Guess (totally not hangman)
 
+https://aroarian.github.io/WordGuess/
+
 A random word will be choosen
 
 Click "New Word" for a new random word to be selected.
